@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Mylogo from '../assets/app_logo.png';
 import Google from '../assets/google.png';
+import delServiceIMG from '../assets/svg/delivery-service.svg';
 import './LandingPage.css';
 import { auth, signInWithGoogle } from '../firebase';
 import { useNavigate } from "react-router-dom";
@@ -31,6 +32,9 @@ const LandingPage = () => {
         <div>
         <img className="logo" src={Mylogo} />
         </div>
+      <div className="landing-image">
+        <img src={delServiceIMG} alt="landing image" width={300}/>
+      </div>
         <div className="headings">
             <p className="heading">
             Maximize Space. Minimize Risk. <br/>
@@ -39,7 +43,8 @@ const LandingPage = () => {
                 Efficiently pack your items into any container size or shape with <span className="sub-company">Packify</span>, the ultimate load planning solution. Our platform uses advanced algorithms to revolutionize your load planning process, allowing you to maximize space while minimizing the risk of damage during transport. Say goodbye to inefficient load planning and hello to streamlined logistics with <span className="sub-company">Packify</span>.
             </div>
             <div className="button-div">
-            <div className="button" onClick={continueWithGoogle}>
+            <div>Let's get started with packify!</div>
+            <div className="google-button" onClick={continueWithGoogle}>
                 <img width={15} height={15} src={Google} className="google-logo"/> Continue with google
             </div>
             </div>

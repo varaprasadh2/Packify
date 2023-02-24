@@ -9,10 +9,14 @@
   padding-left: 50px;
 }
 .headings {
-  padding: 100px;
+  padding: 0;
 }
-
+.landing-image {
+  display: flex;
+  justify-content: center;
+}
 .heading {
+  margin-top: 0px;
   text-align: center;
   font-size: 56px;
   font-weight: 700;
@@ -20,16 +24,18 @@
 .button-div {
   padding-top: 30px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
-.button {
+.google-button {
+  margin-top: 0.5rem;
+  max-width: 300px;
   cursor: pointer;
   text-align: center;
   justify-content: center;
   display: flex;
-  padding: 5px;
-  width: 20%;
+  padding: 0.5rem 1rem;
   border: 1px solid gray;
   border-radius: 20px;
   color: black;
