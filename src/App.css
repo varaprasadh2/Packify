@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 .App {
   text-align: center;
 }
-
+.font-style {
+  font-family: 'Nunito', sans-serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
