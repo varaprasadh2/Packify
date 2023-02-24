@@ -4,7 +4,6 @@ import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import packaing_wizard from './pages/PackingWizard';
 import AuthComponent from './pages/private/AuthComponent';
-import ProtectedLanding from './pages/private/ProtectedLanding';
 import DashBoard from './pages/private/Dashboard/Index';
 
 function App() {
