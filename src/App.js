@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/Landing/LandingPage';
+import LandingPage from './pages/LandingPage/LandingPage';
 import packaing_wizard from './pages/PackingWizard';
 import ProtectedDashboard from './pages/private/ProtectedDashboard';
 import ProtectedLanding from './pages/private/ProtectedLanding';
