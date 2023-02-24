@@ -1,8 +1,8 @@
 import { Navigate,Outlet } from "react-router";
 
 const ProtectedLanding = () =>{
-    const token = localStorage.getItem("Token")
-    return token?<Navigate to ="/packaing_wizard" />  :<Outlet /> ;
+    const token = localStorage.getItem("user")
+    return token?<Navigate to ="/dashboard" />  :<Outlet /> ;
 };
 
 export default ProtectedLanding;
