@@ -7,7 +7,7 @@
   padding-left: 50px;
 }
 .headings {
-  padding: 150px;
+  padding: 100px;
 }
 
 .heading {
@@ -15,14 +15,26 @@
   font-size: 56px;
   font-weight: 700;
 }
+.button-div {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .button {
   cursor: pointer;
   text-align: center;
+  justify-content: center;
+  display: flex;
   padding: 5px;
   width: 20%;
   border: 1px solid gray;
   border-radius: 20px;
   color: black;
+}
+.google-logo {
+  margin-top: 3px;
+  padding-right: 5px;
 }
 .sub-heading {
   text-align: center;
