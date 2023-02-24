@@ -1,0 +1,32 @@
+.landing_page {
+  height: 100%;
+  padding: 10px;
+}
+.logo {
+  width: 10em;
+  padding-left: 50px;
+}
+.headings {
+  padding: 150px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+}
+.button {
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  width: 20%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: black;
+}
+.sub-heading {
+  text-align: center;
+}
+.sub-company {
+    color: #004aad;
+}
