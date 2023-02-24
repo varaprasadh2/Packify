@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Mylogo from '../assets/app_logo.png';
 import Google from '../assets/google.png';
 import './LandingPage.css';
 import { auth, signInWithGoogle } from '../firebase';
-import { signInWithPopup  } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-
+  const [user, loading, error] = useAuthState(auth);
   const continueWithGoogle = async () => {
     const user = await signInWithGoogle();
     localStorage.setItem('user',JSON.stringify(user));
@@ -18,6 +18,13 @@ const LandingPage = () => {
     }
   }
 
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate("/dashboard");
+  }, [user, loading]);
 
   return (
       <div className="landing_page">
