@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap');
+@use 'styles/_colors.scss';
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;;
