@@ -1,6 +1,8 @@
 .landing_page {
   height: 100%;
   padding: 10px;
+  max-width: 1440px;
+  margin: auto;
 }
 .logo {
   width: 10em;
