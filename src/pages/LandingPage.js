@@ -11,9 +11,9 @@ const LandingPage = () => {
 
   const continueWithGoogle = async () => {
     const user = await signInWithGoogle();
+    localStorage.setItem('user',JSON.stringify(user));
     console.log({ user });
     if (user) {
-      console.log("sldkfnslfknlk");
       navigate("/dashboard");
     }
   }

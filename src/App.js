@@ -15,10 +15,10 @@ function App() {
           <Route element={<ProtectedLanding/>}>
             <Route path='' element={<LandingPage />}/>
           </Route>
-          {/* <Route element={<ProtectedDashboard/>}> */}
-            <Route path='/packaing_wizard' element={<LandingPage />}/>
+          <Route element={<ProtectedDashboard/>}>
+            {/* <Route path='/packaing_wizard' element={<LandingPage />}/> */}
             <Route path='/dashboard' element={<DashBoard />}/>
-          {/* </Route> */}
+          </Route>
         </Routes>
       </Router>
     </div>

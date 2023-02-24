@@ -1,7 +1,7 @@
 import { Navigate,Outlet } from "react-router";
 
 const ProtectedDashboard = () =>{
-    const token = localStorage.getItem("Token")
+    const token = localStorage.getItem("user")
     return token? <Outlet /> : <Navigate to ="/" />;
 };
 
