@@ -3,19 +3,18 @@ import './App.css';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landingpage/LandingPage';
 import packaing_wizard from './pages/PackingWizard';
-import ProtectedDashboard from './pages/private/ProtectedDashboard';
+import AuthComponent from './pages/private/AuthComponent';
 import ProtectedLanding from './pages/private/ProtectedLanding';
+import DashBoard from './pages/private/Dashboard/Index';
 
 function App() {
   return (
     <div className='app'>
       <Router>
         <Routes>
-          <Route element={<ProtectedLanding/>}>
-            <Route path='' element={<LandingPage />}/>
-          </Route>
-          <Route element={<ProtectedDashboard/>}>
-            <Route path='/packaing_wizard' element={<LandingPage />}/>
+          <Route path='' element={<LandingPage />}/>
+          <Route element={<AuthComponent />}>
+            <Route path='/dashboard' element={<DashBoard />}/>
           </Route>
         </Routes>
       </Router>
