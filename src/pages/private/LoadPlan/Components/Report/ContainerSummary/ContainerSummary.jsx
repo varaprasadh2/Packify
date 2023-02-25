@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls, Grid, Plane } from '@react-three/drei';
+
 import "./ContainerSummary.css";
 
 function Box(props) {
@@ -18,9 +19,10 @@ function Box(props) {
             ref={mesh}
             scale={active ? 1.5 : 1}
             onPointerOver={(event) => setHover(true)}
-            onPointerOut={(event) => setHover(false)}>
+            onPointerOut={(event) => setHover(false)}
+        >
             <boxGeometry args={props.size} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'}/>
         </mesh>
     )
 }
