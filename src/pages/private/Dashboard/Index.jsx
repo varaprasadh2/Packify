@@ -4,21 +4,22 @@ import NavBar from "./navbar/Navbar";
 import { auth } from "../../../firebase";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useAuthState } from "react-firebase-hooks/auth";
-import '../Dashboard/Index.css';
+import './Index.css';
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
 export default function DashBoard() {
-    // var myDate = new Date();
-    // var hrs = myDate.getHours();
-    // const [message, setMessage] = useState('');
-    // if (hrs < 12) {
-    //     setMessage('Good Morning');
-    // } else if (hrs >= 12 && hrs <= 12) {
-    //     setMessage('Good After-Noon');
-    // } else if (hrs >= 17 && hrs <= 24) {
-    //     setMessage('Good Night');
-    // }
+    let currentHour = new Date().getHours();
+    // Define the greeting based on the current time
+    let greeting = 'Hi';
+    if (currentHour >= 5 && currentHour < 12) {
+        greeting = "Good morning";
+    } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = "Good afternoon";
+    } else {
+        greeting = "Good evening";
+    }
+
     const navigate = useNavigate();
     const Navigator = () => {
         navigate('/loadPlan');
@@ -27,13 +28,16 @@ export default function DashBoard() {
     return (
         <div>
             <NavBar/>
-            
-            <div className="sub-heading2">{'message'} {user?user.displayName:'User Name'}!</div>
-            <div className="sub-small">Would you like to create a load plan for your upcoming shipment? <b>Let’s get started</b></div>
-            
-            <div className="button-div2">
-            <Button className="button2" onClick={Navigator}>Create Load Plan
-            <ArrowRightOutlined /></Button>
+            <div className="db-main">
+                <div className="action-area">
+                    <div className="legend">
+                        <div className="greeting">{greeting } {user ? user.displayName : 'Anonymous'}!</div>
+                        <div className="greet-followup">Would you like to create a load plan for your upcoming shipment? <b>Let’s get started</b></div>
+                    </div>
+                    <div className="db-actions">
+                        <Button type="primary" onClick={Navigator}>Create Load Plan <i className="fa fa-long-arrow-right" style={{marginLeft: '0.5rem', fontWeight: 'bold'}}></i> </Button>
+                    </div>
+                </div>
             </div>
         </div>
     )

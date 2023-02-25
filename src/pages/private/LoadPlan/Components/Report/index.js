@@ -17,10 +17,9 @@ export default function ({}){
                 </div>
             </div>
             <div>
-                <div style={{marginTop:'50px'}}></div>
-                <Summary/>
-                <ItemList/>
-                <ContainerSummary/>
+                <div style={{marginTop:'50px'}}><Summary/></div>
+                <div style={{marginTop:'50px'}}><ItemList/></div>
+                <div style={{marginTop:'50px'}}><ContainerSummary/></div>
             </div>
         </div>
     )

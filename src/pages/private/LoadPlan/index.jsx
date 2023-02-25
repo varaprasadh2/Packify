@@ -3,12 +3,18 @@ import NavBar from "../Dashboard/navbar/Navbar"
 import { useNavigate } from "react-router-dom";
 import LoadPlanForm from './Components/LoadPlanForm/Index';
 import "./index.css";
+import { packBins } from "../../../utils";
 import Report from "./Components/Report";
 
 export default function LoadPlan() {
     const navigate = useNavigate();
     const dashboard = () => {
         navigate("/dashboard");
+    }
+
+    const generateReport = ({ items, containers }) => {
+        console.log('generate report', { items, containers });
+        packBins({ items, containers });
     }
 
     return (
@@ -23,7 +29,7 @@ export default function LoadPlan() {
                     </div>
                 </div>
                 <div style={{marginBottom:'100px'}}>
-                    <LoadPlanForm />
+                    <LoadPlanForm generateReport={generateReport} />
                 </div>
                 <div >
                     <Report/>
