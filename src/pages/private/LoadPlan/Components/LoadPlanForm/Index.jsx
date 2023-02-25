@@ -50,19 +50,35 @@ export default function LoadPlanForm(props) {
     const addItemStub = () => {
         setItems([...items, getItemStub()]);
     }
+
+    const handleItemValueChange = (id, field, value) => {
+        const item = items.find(i => i.id == id);
+        item[field] = value;
+        setItems([...items]);
+    }
+    const handleContainerValueChange = (id, field, value) => {
+        const container = containers.find(c => c.id == id);
+        container[field] = value;
+        setContainers([...containers]);
+    }
     return (
         <div style={{paddingLeft:'50px',paddingTop:'50px'}}>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
             {
                 containers.map(container =>(
-                    <Container {...container} onDelete={() => onContainerDelete(container.id)} />
+                    <Container
+                        {...container} onDelete={() => onContainerDelete(container.id)}
+                        handleChange={handleContainerValueChange}
+                    />
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addContainerStub}>+Add container</div>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Items</div>
             {
                 items.map(item => ( 
-                    <Item {...item} onDelete={() => onItemDelete(item.id)} />
+                    <Item {...item} onDelete={() => onItemDelete(item.id)}
+                        handleChange={handleItemValueChange}
+                    />
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>

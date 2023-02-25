@@ -3,7 +3,7 @@ import { Input } from 'antd';
 import './Item.css';
 import { isNumeric } from '../../../../../utils';
 
-export default function Item({name,width,height,depth,weight,quantity,onDelete = () => {},}) {
+export default function Item({id,name,width,height,depth,weight,quantity,onDelete = () => {},}) {
     const onChange = (field, value) => {
         if (!isNumeric(value)) return;
         // send to parent
