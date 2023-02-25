@@ -15,5 +15,9 @@
 :where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-content {
    
     border-radius: 5px !important;
-    
 }
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-btn-default:not(:disabled):hover {
+    color: black !important;
+}
+

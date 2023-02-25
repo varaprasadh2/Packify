@@ -19,7 +19,7 @@ const Saveloadplan = () => {
         onOk={() => setModal2Open(false)}
         onCancel={() => setModal2Open(false)}
       >
-        <h1 className='font'>Save load plan</h1>
+         <h1 className='font loadplan'>Save load plan</h1>
          <p className='font'>Please give a name to this load plan</p>
          <Input placeholder="Basic usage" />
 
