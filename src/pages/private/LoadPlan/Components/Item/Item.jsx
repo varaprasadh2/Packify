@@ -10,6 +10,7 @@ export default function Item({
   height,
   depth,
   weight,
+  showHeader = false,
   errors={},
   quantity,
   onDelete = () => {},
@@ -23,8 +24,8 @@ export default function Item({
   return (
     <div className="item">
       <div className="fields">
-        <div className="item_name">
-          {/* <div>Name</div> */}
+        <div className={showHeader?'item_name1':'item_name'}>
+        { showHeader && <div >Name</div> }
           <Input
             placeholder="item name"
             status={errors.name?'error':'null'}
@@ -32,8 +33,8 @@ export default function Item({
             onChange={(e) => handleChange(id, "name", e.target.value)}
           />
         </div>
-        <div className="item_fields">
-          {/* <div>Width</div> */}
+        <div className={showHeader?'item_fields1':'item_fields'}>
+        { showHeader && <div >Width</div> }
           <Input
             onChange={(e) => onChange("width", e.target.value)}
             placeholder="width"
@@ -41,8 +42,8 @@ export default function Item({
             value={width}
           />
         </div>
-        <div className="item_fields">
-          {/* <div>Height</div> */}
+        <div className={showHeader?'item_fields1':'item_fields'}>
+        { showHeader && <div >Height</div> }
           <Input
             value={height}
             placeholder="height"
@@ -50,8 +51,8 @@ export default function Item({
             onChange={(e) => onChange("height", e.target.value)}
           />
         </div>
-        <div className="item_fields">
-          {/* <div>Depth</div> */}
+        <div className={showHeader?'item_fields1':'item_fields'}>
+        { showHeader && <div >Depth</div> }
           <Input
             value={depth}
             placeholder="depth"
@@ -59,8 +60,8 @@ export default function Item({
             onChange={(e) => onChange("depth", e.target.value)}
           />
         </div>
-        <div className="item_fields">
-          {/* <div>Weight</div> */}
+        <div className={showHeader?'item_fields1':'item_fields'}>
+        { showHeader && <div >Weight</div> }
           <Input
             value={weight}
             placeholder="weight"
@@ -68,8 +69,8 @@ export default function Item({
             onChange={(e) => onChange("weight", e.target.value)}
           />
         </div>
-        <div className="item_fields">
-          {/* <div>Quantity</div> */}
+        <div className={showHeader?'item_fields1':'item_fields'}>
+        { showHeader && <div >Quantity</div> }
           <Input
             value={quantity}
             status={errors.quantity?'error':'null'}
@@ -79,6 +80,8 @@ export default function Item({
         </div>
         <div>
         <div className='close'>
+        { showHeader && <br/> }
+
                     <div className="close_icon" onClick={onDelete}>x</div>
                 </div>
         </div>

@@ -5,7 +5,7 @@ import { isNumeric } from '../../../../../utils';
 
 
 
-export default function Container({id, name, width, height, depth, weight, maxWeight,errors = {}, quantity, onDelete = () => {}, handleChange = () => {}}) {
+export default function Container({id, name, width, height, depth, weight, maxWeight,errors = {}, quantity,showHeader = false, onDelete = () => {}, handleChange = () => {}}) {
 
 
     const onChange = (field, value = '') => {
@@ -15,8 +15,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
     return (
         <div className='container'>
             <div className='fields'>
-                <div className='container_name'>
-                    {/* <div>Name</div> */}
+                <div className={showHeader?'container_name1':'container_name'}>
+                    { showHeader && <div >Name</div> }
                     <Input
                         placeholder="container name"
                         value={name}
@@ -24,8 +24,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => handleChange(id, 'name', e.target.value)}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Width</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                    { showHeader && <div >Width</div> }
                     <Input
                         onChange={e => onChange('width', e.target.value)}
                         placeholder="width"
@@ -33,8 +33,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         value={width}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Height</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                { showHeader && <div >Height</div> }
                     <Input
                         value={height}
                         placeholder="height"
@@ -42,8 +42,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('height', e.target.value)}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Depth</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                { showHeader && <div >Depth</div> }
                     <Input
                         value={depth}
                         placeholder="depth"
@@ -51,8 +51,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('depth', e.target.value)}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Weight</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                { showHeader && <div >Weight</div> }
                     <Input
                         value={weight}
                         placeholder="weight"
@@ -60,8 +60,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('weight', e.target.value)}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Max Weight</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                { showHeader && <div >Max Weight</div> }
                     <Input
                         value={maxWeight}
                         placeholder="max weight"
@@ -69,8 +69,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('maxWeight', e.target.value)}
                     />
                 </div>
-                <div className='container_fields'>
-                    {/* <div>Quantity</div> */}
+                <div className={showHeader?'container_fields1':'container_fields'}>
+                    { showHeader && <div >Quantity</div> }
                     <Input
                         value={quantity}
                         placeholder="quantity"
@@ -79,6 +79,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='close'>
+                { showHeader && <br/> }
                     <div className="close_icon" onClick={onDelete}>x</div>
                 </div>
             </div>            

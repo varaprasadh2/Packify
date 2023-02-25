@@ -2,12 +2,22 @@
     min-width: 200px !important;
     width: 200px !important;
     height: 40px;
-
+}
+.item_name1{
+    min-width: 200px !important;
+    width: 200px !important;
+    height: 60px;
 }
 .item_fields{
     min-width: 100px !important;
     width: 100px !important;
     height: 40px;
+    margin-left: 10px;
+}
+.item_fields1{
+    min-width: 100px !important;
+    width: 100px !important;
+    height: 60px;
     margin-left: 10px;
 }
 .fields{

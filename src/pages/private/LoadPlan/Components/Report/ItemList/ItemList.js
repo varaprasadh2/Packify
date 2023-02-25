@@ -10,7 +10,7 @@ const columns = [
     {
       title: 'Quantity',
       dataIndex: 'quantity',
-      key: 'quantity',
+      key: 'count',
     },
 ]
 const data = [
@@ -27,10 +27,10 @@ const data = [
 ]
 
 
-export default function ItemList({}){
+export default function ItemList({report=[]}){
     return (
         <div className="packListTable" style={{width:'400px'}}>
-            <Table columns={columns} dataSource={data} pagination={{ hideOnSinglePage: true }}/>
+            <Table columns={columns} dataSource={report} pagination={{ hideOnSinglePage: true }}/>
         </div>
     )
 }
