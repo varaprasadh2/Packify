@@ -13,6 +13,7 @@ const getContainerStub = () => {
         weight: null,
         maxWeight: null,
         quantity: 1,
+        errors: {}
     })
 }
 
@@ -25,6 +26,7 @@ const getItemStub = () => {
         depth: null,
         weight: null,
         quantity: 1,
+        errors: {}
     })
 }
 export default function LoadPlanForm(props) {
@@ -62,6 +64,93 @@ export default function LoadPlanForm(props) {
         container[field] = value;
         setContainers([...containers]);
     }
+
+    const process = () => {
+        console.log({
+            items, containers
+        });
+        items.forEach(item => {
+            if (item.name.trim() === '') {
+                item.errors.name = 'should not be empty';
+            } else {
+                delete item.errors.name;
+            }
+            if (item.width == null || item.width == 0) {
+                item.errors.width = 'invalid width';
+            } else {
+                delete item.errors.width
+            }
+            if (item.height == null || item.height == 0) {
+                item.errors.height = 'invalid height';
+            } else {
+                delete item.errors.height;
+            }
+            if (item.depth == null || item.depth == 0) {
+                item.errors.depth = 'invalid depth';
+            } else {
+                delete item.errors.depth;
+            }
+            if (item.weight == null || item.weight == 0) {
+                item.errors.weight = 'invalid weight';
+            } else {
+                delete item.errors.weight;
+            }
+            if (item.quantity == null || item.quantity == 0) {
+                item.errors.quantity = 'invalid quantity';
+            } else {
+                delete item.errors.quantity;
+            }
+        });
+        containers.forEach(item => {
+            if (item.name.trim() === '') {
+                item.errors.name = 'should not be empty';
+            } else {
+                delete item.errors.name;
+            }
+            if (item.width == null || item.width == 0) {
+                item.errors.width = 'invalid width';
+            } else {
+                delete item.errors.width
+            }
+            if (item.height == null || item.height == 0) {
+                item.errors.height = 'invalid height';
+            } else {
+                delete item.errors.height;
+            }
+            if (item.depth == null || item.depth == 0) {
+                item.errors.depth = 'invalid depth';
+            } else {
+                delete item.errors.depth;
+            }
+            if (item.weight == null || item.weight == 0) {
+                item.errors.weight = 'invalid weight';
+            } else {
+                delete item.errors.weight;
+            }
+            if (item.maxWeight == null || item.maxWeight == 0) {
+                item.errors.maxWeight = 'invalid maxWeight';
+            } else {
+                delete item.errors.maxWeight;
+            }
+            if (item.quantity == null || item.quantity == 0) {
+                item.errors.quantity = 'invalid quantity';
+            } else {
+                delete item.errors.quantity;
+            }
+        });
+        setContainers([...containers]);
+        setItems([...items]);
+        const isItemsHasErrors = items.some(item => Object.keys(item.errors).length > 0);
+        const isContainerHasErrors = containers.some(item => Object.keys(item.errors).length > 0);
+        // if items has any errors or container has any errors dont do anything;
+        console.log(isItemsHasErrors, isContainerHasErrors);
+        if (isItemsHasErrors) return;
+        if (isContainerHasErrors) return;
+
+        console.log("lets gooooo", { items, containers });
+
+
+    }
     return (
         <div style={{paddingLeft:'50px',paddingTop:'50px'}}>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
@@ -85,9 +174,7 @@ export default function LoadPlanForm(props) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
-            <div style={{width:'100%',display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" >Process</Button></div>
-            
-            {/* render process button */}
+            <div style={{display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" onClick={process}>Process</Button></div>            
         </div>
     );
 
