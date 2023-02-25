@@ -1,0 +1,20 @@
+.load_content{
+    height: calc(100vh - 151px);
+    padding: 40px;
+
+}
+.load_content_top{
+    display: flex;
+    flex-direction: row;
+}
+.arrow_icon{
+    /* padding-top: 20px; */
+    font-size: 30px;
+}
+.lct_right{
+    padding-left: 20px;
+}
+.lct_heading{
+    font-size: 20px;
+    font-weight: 600;
+}
