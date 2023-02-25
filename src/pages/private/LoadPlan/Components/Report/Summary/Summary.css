@@ -17,7 +17,7 @@
 }
 .summary{
     background: white;
-    filter: drop-shadow(1px 1px 5px black);
+    filter: drop-shadow(1px 1px 1px #919191);
     width: fit-content;
     padding: 20px;
 }
