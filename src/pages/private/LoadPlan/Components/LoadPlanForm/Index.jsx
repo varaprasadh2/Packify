@@ -73,7 +73,7 @@ export default function LoadPlanForm(props) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addContainerStub}>+Add container</div>
-            <div className="label">Items</div>
+            <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Items</div>
             {
                 items.map(item => ( 
                     <Item {...item} onDelete={() => onItemDelete(item.id)}
