@@ -30,7 +30,7 @@ const getItemStub = () => {
         errors: {}
     })
 }
-export default function LoadPlanForm(props) {
+export default function LoadPlanForm({ generateReport = () => {} }) {
     const [items, setItems] = useState([]);
     const [containers, setContainers] = useState([]);
 
@@ -149,8 +149,7 @@ export default function LoadPlanForm(props) {
         if (isContainerHasErrors) return;
 
         console.log("lets gooooo", { items, containers });
-
-
+        generateReport({ items, containers });
     }
     return (
         <div style={{paddingLeft:'50px',paddingTop:'50px',width:'fit-content'}}>
