@@ -24,7 +24,7 @@ export default function NavBar() {
                     </div>
                     {
                         menu && <div className='actions'>
-                            <div className="action">Logout</div>
+                            <div className="action" onClick={logout}>Logout</div>
                         </div>
                     }
                 </div>

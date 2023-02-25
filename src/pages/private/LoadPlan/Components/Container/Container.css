@@ -1,0 +1,22 @@
+.container_name{
+    max-width: 200px;
+    width: 20%;
+    height: 40px;
+}
+.container_fields{
+    max-width: 100px;
+    width: 12%;
+    margin-left: 10px;
+    height: 40px;
+}
+.fields{
+    display: flex;
+    flex-direction: row;
+}
+.close_icon{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: -2px;
+    margin-left: 10px;
+    color: dimgray;
+}
