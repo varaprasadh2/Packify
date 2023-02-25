@@ -69,6 +69,7 @@ export default function LoadPlanForm(props) {
                     <Container
                         {...container} onDelete={() => onContainerDelete(container.id)}
                         handleChange={handleContainerValueChange}
+                        key={container.id}
                     />
                 ))
             }
@@ -77,6 +78,7 @@ export default function LoadPlanForm(props) {
             {
                 items.map(item => ( 
                     <Item {...item} onDelete={() => onItemDelete(item.id)}
+                        key={item.id}
                         handleChange={handleItemValueChange}
                     />
                 ))
