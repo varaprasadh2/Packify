@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import Item from '../Item/Item';
+import { Button } from 'antd';
 
 const getContainerStub = () => {
     return ({
@@ -73,7 +74,7 @@ export default function LoadPlanForm(props) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addContainerStub}>+Add container</div>
-            <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Items</div>
+            <div className="label" style={{fontSize:'35px',paddingBottom:'20px',marginTop:'1rem'}}>Items</div>
             {
                 items.map(item => ( 
                     <Item {...item} onDelete={() => onItemDelete(item.id)}
@@ -82,6 +83,8 @@ export default function LoadPlanForm(props) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
+            <div style={{width:'100%',display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" >Process</Button></div>
+            
             {/* render process button */}
         </div>
     );

@@ -18,7 +18,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_name'>
                     {/* <div>Name</div> */}
                     <Input
-                        placeholder="container one"
+                        placeholder="container name"
                         value={name}
                         onChange={e => handleChange(id, 'name', e.target.value)}
                     />
@@ -71,9 +71,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('quantity', e.target.value)}
                     />
                 </div>
-                <div>
-                    <br/>
-                    <p className="close_icon" onClick={onDelete}>x</p>
+                <div className='close'>
+                    <div className="close_icon" onClick={onDelete}>x</div>
                 </div>
             </div>            
         </div>
