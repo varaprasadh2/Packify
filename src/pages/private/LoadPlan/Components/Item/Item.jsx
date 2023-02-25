@@ -5,6 +5,7 @@ export default function Item({ name, width, height, depth, weight, quantity, onD
 
     return (
         <div>
+            item
             {/* input fields */}
             {/* delete icon */}
         </div>

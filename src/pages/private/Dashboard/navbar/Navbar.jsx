@@ -19,7 +19,7 @@ export default function NavBar() {
                 <div className="nav-buttons">
                     <div className='nav_right' onClick={() => showMenu(!menu)}>
                         <div>{user?user.displayName:'User Name'}</div>
-                        <img src={user.photoURL} alt="Avatar" class="avatar"></img>
+                        <img src={user.photoURL} alt="Avatar" className="avatar"></img>
                     </div>
                     {
                         menu && <div className='actions'>

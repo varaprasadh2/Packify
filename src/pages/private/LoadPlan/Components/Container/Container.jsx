@@ -5,6 +5,7 @@ export default function Container({ name, width, height, depth, weight, maxWeigh
 
     return (
         <div>
+            container
             {/* input fields */}
             {/* delete icon */}
         </div>
