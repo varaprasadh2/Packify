@@ -25,7 +25,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className={showHeader?'container_fields1':'container_fields'}>
-                    { showHeader && <div >Width</div> }
+                    { showHeader && <div >Width<span style={{color:'#64646478'}}>(cm)</span></div> }
                     <Input
                         onChange={e => onChange('width', e.target.value)}
                         placeholder="width"
@@ -34,7 +34,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className={showHeader?'container_fields1':'container_fields'}>
-                { showHeader && <div >Height</div> }
+                { showHeader && <div >Height<span style={{color:'#64646478'}}>(cm)</span></div> }
                     <Input
                         value={height}
                         placeholder="height"
@@ -43,16 +43,16 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className={showHeader?'container_fields1':'container_fields'}>
-                { showHeader && <div >Depth</div> }
+                { showHeader && <div >Length<span style={{color:'#64646478'}}>(cm)</span></div> }
                     <Input
                         value={depth}
-                        placeholder="depth"
+                        placeholder="Length"
                         status={errors.depth?'error':'null'}
                         onChange={e => onChange('depth', e.target.value)}
                     />
                 </div>
                 <div className={showHeader?'container_fields1':'container_fields'}>
-                { showHeader && <div >Weight</div> }
+                { showHeader && <div>Weight<span style={{color:'#64646478'}}>(kg)</span></div> }
                     <Input
                         value={weight}
                         placeholder="weight"
@@ -60,8 +60,8 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('weight', e.target.value)}
                     />
                 </div>
-                <div className={showHeader?'container_fields1':'container_fields'}>
-                { showHeader && <div >Max Weight</div> }
+                <div className={showHeader?'container_fields1':'container_fields'} style={{width: '125px'}}>
+                { showHeader && <div >Max Weight<span style={{color:'#64646478'}}>(kg)</span></div> }
                     <Input
                         value={maxWeight}
                         placeholder="max weight"

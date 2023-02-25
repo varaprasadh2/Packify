@@ -35,7 +35,7 @@
     top:52%;
     left: 40%;
     opacity: 0;
-    animation: box 2s linear infinite;
+    animation: box 4s linear infinite;
 }
 
 .box-img2{
@@ -62,7 +62,11 @@
 .box-img9{
     animation-delay: 8s;
 }
-@keyframes box{
+@keyframes box1{
+    0%,40%{
+        opacity:0;
+        left:85%
+    }
     60%,100%{
         opacity: 0;
         left: 15%;
@@ -72,8 +76,24 @@
         
         left: 85%;
     }
-    0%,40%{
+
+}
+@keyframes box{
+    0%{
         opacity:0;
         left:85%
+    }
+    10% {
+        opacity: 50%;
+    }
+    30% {
+        opacity: 100%;
+    }
+    95% {
+        opacity: 90%;
+    }
+    100%{
+        opacity: 0;
+        left: 15%;
     }
 }

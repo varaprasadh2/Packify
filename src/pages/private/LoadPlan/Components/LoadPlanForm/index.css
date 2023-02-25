@@ -1,0 +1,5 @@
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-btn-primary:not(:disabled):hover {
+    color: #fff;
+    background-color: #004BAF !important;
+}
