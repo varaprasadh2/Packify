@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import packaing_wizard from './pages/PackingWizard';
 import AuthComponent from './pages/private/AuthComponent';
 import DashBoard from './pages/private/Dashboard/Index';
+import LoadPlan from './pages/private/LoadPlan';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path='' element={<LandingPage />}/>
           <Route element={<AuthComponent />}>
-            <Route path='/dashboard' element={<DashBoard />}/>
+            <Route path='/dashboard' element={<DashBoard/>}/>
+            <Route path='/loadPlan' element={<LoadPlan/>}/>
           </Route>
         </Routes>
       </Router>
