@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Menu } from 'antd';
 import './Navbar.css';
 import Mylogo from '../../../../../src/assets/app_logo.png';
+import parcel from '../../../../assets/svg/parcel-box-package-icon.svg'
 import { logout,auth } from '../../../../firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
 const { Item } = Menu;
@@ -23,11 +24,12 @@ export default function NavBar() {
                     </div>
                     {
                         menu && <div className='actions'>
-                            <div className="action">Logout</div>
+                            <div className="action" onClick={logout}>Logout</div>
                         </div>
                     }
                 </div>
             </div>
+            
         </div>
     )
 }
