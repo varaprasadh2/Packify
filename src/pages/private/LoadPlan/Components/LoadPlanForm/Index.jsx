@@ -61,7 +61,7 @@ export default function LoadPlanForm(props) {
             <div onClick={addContainerStub}>+Add container</div>
             <div className="label">Items</div>
             {
-                items.map(item => (
+                items.map(item => ( 
                     <Item {...item} onDelete={() => onItemDelete(item.id)} />
                 ))
             }
