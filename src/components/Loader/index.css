@@ -1,0 +1,79 @@
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.loader-inner {
+    position: relative;
+}
+.wrap{
+    /* position: absolute; */
+    /* bottom: 100px; */
+    left: 0;
+    width: 220px;
+    margin-bottom: 200px;
+}
+.image{
+    width: 150px;
+    position: absolute;
+}
+.truck-img{
+     /* bottom: 0; */
+     top: 80px;
+     left: 0px;
+    z-index: 2;
+    /* animation:truck 8s linear infinite ;  */
+    /* transform: scaleX(-1); */
+}
+
+.box-img{
+    width: 30px;
+    z-index: 1;
+    top:52%;
+    left: 40%;
+    opacity: 0;
+    animation: box 2s linear infinite;
+}
+
+.box-img2{
+    animation-delay: 1s;
+}
+.box-img3{
+    animation-delay: 2s;
+}
+.box-img4{
+    animation-delay: 3s;
+}
+.box-img5{
+    animation-delay: 4s;
+}
+.box-img6{
+    animation-delay: 5s;
+}
+.box-img7{
+    animation-delay: 6s;
+}
+.box-img8{
+    animation-delay: 7s;
+}
+.box-img9{
+    animation-delay: 8s;
+}
+@keyframes box{
+    60%,100%{
+        opacity: 0;
+        left: 15%;
+    }
+    50%{
+        opacity: 1;
+        
+        left: 85%;
+    }
+    0%,40%{
+        opacity:0;
+        left:85%
+    }
+}

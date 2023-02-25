@@ -1,7 +1,8 @@
 import './Content.css';
-import { DownloadOutlined } from '@ant-design/icons';
+// import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Radio, Space, Divider } from 'antd';
 import { useNavigate } from "react-router-dom";
+import LoadPlanForm from '../Components/LoadPlanForm/Index';
 
 
 
@@ -19,6 +20,7 @@ export default function Content() {
                         {/* <Button type="primary" icon={<DownloadOutlined />}></Button> */}
                     </div>
                 </div>
+                <LoadPlanForm />
             </div>
     )
 }
