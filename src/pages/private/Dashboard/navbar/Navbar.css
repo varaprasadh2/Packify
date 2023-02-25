@@ -1,0 +1,25 @@
+.nav{
+    height: 70px;
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_logo{
+    padding-left: 15px;
+}
+.nav_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign_out{
+    padding: 15px;
+}
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #d8d8d8;
+    margin-left: 20px;
+}

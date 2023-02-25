@@ -1,7 +1,9 @@
+import NavBar from "./navbar/Navbar"
+
 export default function DashBoard() {
     return (
         <div>
-            yay!, its dashboard
+            <NavBar/>
         </div>
     )
 }
