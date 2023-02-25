@@ -36,12 +36,12 @@ export default function LoadPlanForm(props) {
     }, []);
 
     const onItemDelete = (id) => {
-        const filtered = items.filter(i => i.id != id);
+        const filtered = items.filter(i => i.id !== id);
         setItems(filtered);
     }
 
     const onContainerDelete = (id) => {
-        const filtered = containers.filter(c => c.id != id);
+        const filtered = containers.filter(c => c.id !== id);
         setContainers(filtered);
     }
     const addContainerStub = () => {
@@ -51,21 +51,21 @@ export default function LoadPlanForm(props) {
         setItems([...items, getItemStub()]);
     }
     return (
-        <div>
-            <div className="label">Containers</div>
+        <div style={{paddingLeft:'50px',paddingTop:'50px'}}>
+            <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
             {
                 containers.map(container =>(
                     <Container {...container} onDelete={() => onContainerDelete(container.id)} />
                 ))
             }
-            <div onClick={addContainerStub}>+Add container</div>
+            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addContainerStub}>+Add container</div>
             <div className="label">Items</div>
             {
                 items.map(item => (
                     <Item {...item} onDelete={() => onItemDelete(item.id)} />
                 ))
             }
-            <div onClick={addItemStub}>+Add Item</div>
+            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
             {/* render process button */}
         </div>
     );
