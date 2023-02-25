@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import Item from '../Item/Item';
+import Saveloadplan from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
 
 const getContainerStub = () => {
@@ -88,7 +89,10 @@ export default function LoadPlanForm(props) {
             <div style={{width:'100%',display:'flex',justifyContent:'flex-end'}}><Button style={{right:'110px'}} type="primary" >Process</Button></div>
             
             {/* render process button */}
+
+            <div><Saveloadplan/></div>
         </div>
+        
     );
 
 }
