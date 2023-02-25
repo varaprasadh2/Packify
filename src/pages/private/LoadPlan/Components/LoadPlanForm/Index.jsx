@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import Item from '../Item/Item';
+import Saveloadplan from '../SaveLoadPlanPopup/Index';
 
 const getContainerStub = () => {
     return ({
@@ -67,7 +68,10 @@ export default function LoadPlanForm(props) {
             }
             <div onClick={addItemStub}>+Add Item</div>
             {/* render process button */}
+
+            <div><Saveloadplan/></div>
         </div>
+        
     );
 
 }

@@ -1,0 +1,19 @@
+ /* :where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-close-x {
+    display: none;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 22px;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+} */
+
+.anticon {
+    display: none !important;
+    
+}
+:where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-content {
+   
+    border-radius: 5px !important;
+    
+}

@@ -5,7 +5,7 @@ import Loader from '../../components/Loader/Index'
 
 const AuthComponent = () =>{
     const [user, loading, error] = useAuthState(auth);
-    return  <Loader/> ;
+    return loading ? <Loader/> : user ? <Outlet /> : <Navigate to ="/" />;
 };
 
 export default AuthComponent;
