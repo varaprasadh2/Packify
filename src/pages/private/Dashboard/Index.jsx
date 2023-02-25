@@ -4,7 +4,7 @@ import NavBar from "./navbar/Navbar";
 import { auth } from "../../../firebase";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useAuthState } from "react-firebase-hooks/auth";
-import '../Dashboard/Index.css';
+import './Index.css';
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -12,13 +12,13 @@ export default function DashBoard() {
     var myDate = new Date();
     var hrs = myDate.getHours();
     const [message, setMessage] = useState('');
-    if (hrs < 12) {
-        setMessage('Good Morning');
-    } else if (hrs >= 12 && hrs <= 12) {
-        setMessage('Good After-Noon');
-    } else if (hrs >= 17 && hrs <= 24) {
-        setMessage('Good Night');
-    }
+    // if (hrs < 12) {
+    //     setMessage('Good Morning');
+    // } else if (hrs >= 12 && hrs <= 12) {
+    //     setMessage('Good After-Noon');
+    // } else if (hrs >= 17 && hrs <= 24) {
+    //     setMessage('Good Night');
+    // }
     const navigate = useNavigate();
     const Navigator = () => {
         navigate('/loadPlan');
