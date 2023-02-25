@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import Item from '../Item/Item';
-import Saveloadplan from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
 
 const getContainerStub = () => {
@@ -163,7 +162,7 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
                     />
                 ))
             }
-            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addContainerStub}>+Add container</div>
+            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addContainerStub}>+Add container</div>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px',marginTop:'1rem'}}>Items</div>
             {
                 items.map(item => ( 
@@ -173,9 +172,8 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
                     />
                 ))
             }
-            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
-            <div style={{display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" onClick={process}>Process</Button></div>            
-            <div><Saveloadplan /></div>
+            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addItemStub}>+Add Item</div>
+            <div style={{display:'flex',justifyContent:'flex-end'}}><Button style={{right:'110px'}} type="primary" onClick={process}>Process</Button></div>            
         </div>
         
     );

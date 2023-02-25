@@ -5,7 +5,7 @@ import { isNumeric } from '../../../../../utils';
 
 
 
-export default function Container({id, name, width, height, depth, weight, maxWeight, quantity, onDelete = () => {}, handleChange = () => {}}) {
+export default function Container({id, name, width, height, depth, weight, maxWeight,errors = {}, quantity, onDelete = () => {}, handleChange = () => {}}) {
 
 
     const onChange = (field, value = '') => {
@@ -20,6 +20,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         placeholder="container name"
                         value={name}
+                        status={errors.name?'error':'null'}
                         onChange={e => handleChange(id, 'name', e.target.value)}
                     />
                 </div>
@@ -28,6 +29,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         onChange={e => onChange('width', e.target.value)}
                         placeholder="width"
+                        status={errors.width?'error':'null'}
                         value={width}
                     />
                 </div>
@@ -36,6 +38,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         value={height}
                         placeholder="height"
+                        status={errors.height?'error':'null'}
                         onChange={e => onChange('height', e.target.value)}
                     />
                 </div>
@@ -44,6 +47,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         value={depth}
                         placeholder="depth"
+                        status={errors.depth?'error':'null'}
                         onChange={e => onChange('depth', e.target.value)}
                     />
                 </div>
@@ -52,6 +56,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         value={weight}
                         placeholder="weight"
+                        status={errors.weight?'error':'null'}
                         onChange={e => onChange('weight', e.target.value)}
                     />
                 </div>
@@ -60,6 +65,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         value={maxWeight}
                         placeholder="max weight"
+                        status={errors.maxWeight?'error':'null'}
                         onChange={e => onChange('maxWeight', e.target.value)}
                     />
                 </div>
@@ -68,6 +74,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     <Input
                         value={quantity}
                         placeholder="quantity"
+                        status={errors.quantity?'error':'null'}
                         onChange={e => onChange('quantity', e.target.value)}
                     />
                 </div>
