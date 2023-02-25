@@ -34,6 +34,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_fields'>
                     <div>Height</div>
                     <Input
+                        value={height}
                         placeholder="height"
                         onChange={e => onChange('height', e.target.value)}
                     />
@@ -41,6 +42,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_fields'>
                     <div>Depth</div>
                     <Input
+                        value={depth}
                         placeholder="depth"
                         onChange={e => onChange('depth', e.target.value)}
                     />
@@ -48,6 +50,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_fields'>
                     <div>Weight</div>
                     <Input
+                        value={weight}
                         placeholder="weight"
                         onChange={e => onChange('weight', e.target.value)}
                     />
@@ -55,6 +58,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_fields'>
                     <div>Max Weight</div>
                     <Input
+                        value={maxWeight}
                         placeholder="max weight"
                         onChange={e => onChange('maxWeight', e.target.value)}
                     />
@@ -62,6 +66,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                 <div className='container_fields'>
                     <div>Quantity</div>
                     <Input
+                        value={quantity}
                         placeholder="quantity"
                         onChange={e => onChange('quantity', e.target.value)}
                     />
