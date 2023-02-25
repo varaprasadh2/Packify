@@ -4,7 +4,9 @@ import Summary from "./Summary/Summary";
 import Saveloadplan from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
 
-export default function ({}){
+export default function ({report = {}}){
+    console.log('report', report);
+
     return (
         <div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:'930px'}}>
@@ -17,8 +19,17 @@ export default function ({}){
                 </div>
             </div>
             <div>
-                <div style={{marginTop:'50px'}}><Summary/></div>
-                <div style={{marginTop:'50px'}}><ItemList/></div>
+                <div style={{marginTop:'50px'}}><Summary report={report.overallSummery}/></div>
+                <div style={{marginTop:'50px',display:'flex',flexDirection:'row'}}>
+                    <div style={{marginRight:'20px'}}>
+                        <div>Packed Items</div>
+                        <ItemList report={report.itemsPacked}/>
+                    </div>
+                    <div>
+                        <div>Items not packed</div>
+                        <ItemList report={report.itemsNotPacked}/>
+                    </div>
+                </div>
                 <div style={{marginTop:'50px'}}><ContainerSummary/></div>
             </div>
         </div>

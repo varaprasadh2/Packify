@@ -46,7 +46,7 @@ export const packBins = ({ items,containers }) => {
     const containerWeight = packer.bins.reduce((sum, bin) => {
         const id = bin.name;
         const container = containers.find(c => c.id === id);
-        return sum + container.weight;
+        return sum +  parseInt(container.weight);
     }, 0);
     const packedItemIds = new Set();
     const packedItems = packer.bins
