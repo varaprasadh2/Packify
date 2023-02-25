@@ -28,3 +28,34 @@
     /* border-color: none !important; */
 }
 
+.history {
+    min-width: 500px;
+}
+.action-area-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.history-list-item {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    filter: drop-shadow(1px 1px 1px gray);
+    border-radius: 0.2rem;
+}
+.history-item-actions {
+    margin-left: auto;
+}
+.history-item-action {
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+}
+.history-item-action:hover {
+    background: #d8d8d8;
+}
+.history-item-actions {
+    display: flex;
+    align-items: center;
+}

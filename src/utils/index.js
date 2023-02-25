@@ -68,15 +68,21 @@ export const packBins = ({ items,containers }) => {
                 count: item.quantity - usedCount
             }
             return res;
-       }).filter(i => i.count > 1);
+       }).filter(i => i.count > 0);
 
        const containerInfos = packer.bins.map((bin, index) => {
             const container = containers.find(c => c.id == bin.name);
+            const usedVolume = bin.items.reduce((sum, item) => sum + (item.width * item.height * item.depth), 0);
+            const netWeight = bin.items.reduce((sum, item) => sum + (item.weight), 0);
             return {
                 ...container,
                 bin,
                 totalContainers: packer.bins.length,
-                currentContainerIndex: index,
+                currentContainerIndex: index + 1,
+                volume: container.width * container.height * container.depth,
+                usedVolume: usedVolume,
+                itemsWeight: parseInt(container.weight) + netWeight,
+                netWeight: netWeight,
             }
        });
         const result = {
@@ -92,6 +98,10 @@ export const packBins = ({ items,containers }) => {
             itemsNotPacked: itemsNotPackedList,
             containers: containerInfos,
             packer,
+            inputs: {
+                containers,
+                items,
+            }
         };
     return result;
 

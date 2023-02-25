@@ -27,7 +27,7 @@ export default function Summary({report={}}){
                 </div>
                 <div className="overall_list_item_last">
                     <div>Net Weight</div>
-                    <div>{report.itemsNotPacked} kg</div>
+                    <div>{report.netWeight} kg</div>
                 </div>
             </div>
         </div>

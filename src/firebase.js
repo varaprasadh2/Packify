@@ -51,12 +51,30 @@ export const signInWithGoogle = async () => {
         return user;
     } catch (err) {
         console.error(err);
-        alert(err.message);
+        // show toaster
     }
 };
 
 export const logout = () => {
     signOut(auth);
 };
+
+export const saveReportToHistory = async ({ name, report }) => {
+    try {
+        if (name.trim() == '') throw new Error("Name can't be empty");
+        const userId = auth.currentUser.uid;
+        const docResult = await addDoc(collection(db, "loadPlans"), {
+            userId: userId,
+            name: name,
+            report: report
+        });
+        console.log(docResult);
+        return docResult;
+    } catch (error) {
+        console.error(error);
+        // show toaster
+        return null;
+    }
+}
 
 export default app;

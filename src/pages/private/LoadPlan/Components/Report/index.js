@@ -30,7 +30,13 @@ export default function ({report = {}}){
                         <ItemList report={report.itemsNotPacked}/>
                     </div>
                 </div>
-                <div style={{marginTop:'50px'}}><ContainerSummary/></div>
+                <div style={{marginTop:'50px'}}>
+                    {
+                        report.containers.map(container => (
+                            <ContainerSummary key={container.id} data={container}/>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

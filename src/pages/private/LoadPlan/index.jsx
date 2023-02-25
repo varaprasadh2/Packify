@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function LoadPlan() {
     const navigate = useNavigate();
-    const [report, setReport] = useState({});
+    const [report, setReport] = useState(null);
     const dashboard = () => {
         navigate("/dashboard");
     }
@@ -35,7 +35,7 @@ export default function LoadPlan() {
                     <LoadPlanForm generateReport={generateReport} />
                 </div>
                 <div >
-                    <Report report={report}/>
+                    {report && <Report report={report} /> }
                 </div>
             </div>
         </div>

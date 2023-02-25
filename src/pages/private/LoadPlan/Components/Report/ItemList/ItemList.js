@@ -9,22 +9,11 @@ const columns = [
     },
     {
       title: 'Quantity',
-      dataIndex: 'quantity',
+      dataIndex: 'count',
       key: 'count',
     },
 ]
-const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      quantity: 32,
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      quantity: 42,
-    },
-]
+
 
 
 export default function ItemList({report=[]}){

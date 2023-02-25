@@ -9,6 +9,7 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
 export default function DashBoard() {
+    const [history, setHistory] = useState([]);
     let currentHour = new Date().getHours();
     // Define the greeting based on the current time
     let greeting = 'Hi';
@@ -20,6 +21,7 @@ export default function DashBoard() {
         greeting = "Good evening";
     }
 
+    console.log({ debug: auth });
     const navigate = useNavigate();
     const Navigator = () => {
         navigate('/loadPlan');
@@ -36,6 +38,22 @@ export default function DashBoard() {
                     </div>
                     <div className="db-actions">
                         <Button type="primary" onClick={Navigator}>Create Load Plan <i className="fa fa-long-arrow-right" style={{marginLeft: '0.5rem', fontWeight: 'bold'}}></i> </Button>
+                    </div>
+                </div>
+                <div className="action-area history">
+                    <div className="action-area-title">Your saved load plans</div>
+                    <div className="history-list">
+                        <div className="history-list-item">
+                            <div className="history-item-title">january shipment</div>
+                            <div className="history-item-actions">
+                                <div className="history-item-action">
+                                   <i className="fa fa-trash"></i>
+                                </div>
+                                <div className="history-item-action">
+                                    View &nbsp;<i className="fa fa-long-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
