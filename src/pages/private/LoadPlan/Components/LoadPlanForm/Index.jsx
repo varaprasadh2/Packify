@@ -63,7 +63,7 @@ export default function LoadPlanForm(props) {
         setContainers([...containers]);
     }
     return (
-        <div style={{paddingLeft:'50px',paddingTop:'50px'}}>
+        <div style={{paddingLeft:'50px',paddingTop:'50px',width:'fit-content'}}>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
             {
                 containers.map(container =>(
@@ -85,7 +85,7 @@ export default function LoadPlanForm(props) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
-            <div style={{width:'100%',display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" >Process</Button></div>
+            <div style={{width:'100%',display:'flex',justifyContent:'flex-end'}}><Button style={{right:'110px'}} type="primary" >Process</Button></div>
             
             {/* render process button */}
         </div>
