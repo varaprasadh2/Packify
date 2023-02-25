@@ -1,63 +1,41 @@
-.nav{
-    height: 70px;
-    border-bottom: 1px solid #d8d8d8;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.nav_logo{
-    padding-left: 15px;
-}
-.nav_right{
+.loader{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.sign_out{
-    padding: 15px;
-}
-.avatar {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 1px solid #d8d8d8;
-    margin-left: 20px;
-}
+    height: 100vh;
+    overflow: hidden;
 
-/* .wrap{
-    position: absolute;
-    height: 150px;
-    bottom: 100px;
+}
+.loader-inner {
+    position: relative;
+}
+.wrap{
+    /* position: absolute; */
+    /* bottom: 100px; */
     left: 0;
-    width: 250px;
+    width: 220px;
+    margin-bottom: 200px;
 }
 .image{
     width: 150px;
     position: absolute;
 }
 .truck-img{
-     bottom: 0;
+     /* bottom: 0; */
      top: 80px;
      left: 0px;
     z-index: 2;
-    animation:truck 8s linear infinite ; 
-    transform: scaleX(-1);
+    /* animation:truck 8s linear infinite ;  */
+    /* transform: scaleX(-1); */
 }
-@keyframes truck{ 
-    40%,70%{
-        left:60%;
-    }
-    100%{
-        left: 100%;
-    }
-}
+
 .box-img{
     width: 30px;
     z-index: 1;
-    top:68%;
+    top:52%;
     left: 40%;
     opacity: 0;
-    animation: box 5s linear infinite;
+    animation: box 2s linear infinite;
 }
 
 .box-img2{
@@ -98,4 +76,4 @@
         opacity:0;
         left:85%
     }
-} */
+}
