@@ -10,6 +10,7 @@ export default function Item({
   height,
   depth,
   weight,
+  errors={},
   quantity,
   onDelete = () => {},
   handleChange = () => {},
@@ -26,6 +27,7 @@ export default function Item({
           {/* <div>Name</div> */}
           <Input
             placeholder="item name"
+            status={errors.name?'error':'null'}
             value={name}
             onChange={(e) => handleChange(id, "name", e.target.value)}
           />
@@ -35,6 +37,7 @@ export default function Item({
           <Input
             onChange={(e) => onChange("width", e.target.value)}
             placeholder="width"
+            status={errors.width?'error':'null'}
             value={width}
           />
         </div>
@@ -43,6 +46,7 @@ export default function Item({
           <Input
             value={height}
             placeholder="height"
+            status={errors.height?'error':'null'}
             onChange={(e) => onChange("height", e.target.value)}
           />
         </div>
@@ -51,6 +55,7 @@ export default function Item({
           <Input
             value={depth}
             placeholder="depth"
+            status={errors.depth?'error':'null'}
             onChange={(e) => onChange("depth", e.target.value)}
           />
         </div>
@@ -59,6 +64,7 @@ export default function Item({
           <Input
             value={weight}
             placeholder="weight"
+            status={errors.weight?'error':'null'}
             onChange={(e) => onChange("weight", e.target.value)}
           />
         </div>
@@ -66,6 +72,7 @@ export default function Item({
           {/* <div>Quantity</div> */}
           <Input
             value={quantity}
+            status={errors.quantity?'error':'null'}
             placeholder="quantity"
             onChange={(e) => onChange("quantity", e.target.value)}
           />

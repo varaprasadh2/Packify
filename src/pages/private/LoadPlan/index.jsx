@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LoadPlanForm from './Components/LoadPlanForm/Index';
 import "./index.css";
 import { packBins } from "../../../utils";
+import Report from "./Components/Report";
 
 export default function LoadPlan() {
     const navigate = useNavigate();
@@ -27,7 +28,12 @@ export default function LoadPlan() {
                         {/* <Button type="primary" icon={<DownloadOutlined />}></Button> */}
                     </div>
                 </div>
-                <LoadPlanForm generateReport={generateReport}/>
+                <div style={{marginBottom:'100px'}}>
+                    <LoadPlanForm generateReport={generateReport} />
+                </div>
+                <div >
+                    <Report/>
+                </div>
             </div>
         </div>
     )
