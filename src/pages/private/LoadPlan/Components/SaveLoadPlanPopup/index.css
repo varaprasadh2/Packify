@@ -8,10 +8,10 @@
     text-rendering: auto;
 } */
 
-.anticon {
+/* .anticon {
     display: none !important;
     
-}
+} */
 :where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-content {
    
     border-radius: 5px !important;
@@ -21,3 +21,15 @@
     color: black !important;
 }
 
+:where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-title {
+    /* margin: 0;
+    color: rgba(0, 0, 0, 0.88); */
+    font-weight: 700 !important;
+    font-size: 25px !important;
+    /* line-height: 1.5;
+    word-wrap: break-word; */
+}
+:where(.css-dev-only-do-not-override-1km3mtt).ant-modal .ant-modal-close-x {
+    
+    margin-top: 10px !important;
+}
