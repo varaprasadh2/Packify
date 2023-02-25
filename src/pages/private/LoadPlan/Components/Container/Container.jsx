@@ -8,9 +8,9 @@ import { isNumeric } from '../../../../../utils';
 export default function Container({id, name, width, height, depth, weight, maxWeight, quantity, onDelete = () => {}, handleChange = () => {}}) {
 
 
-    const onChange = (field, value) => {
+    const onChange = (field, value = '') => {
         if (!isNumeric(value)) return;
-        handleChange(id, field, value);
+        handleChange(id, field, value.trim());
     }
     return (
         <div className='container'>
