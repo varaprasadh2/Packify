@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 }
 .nav_logo{
     padding-left: 40px;
@@ -12,6 +13,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.nav_right:hover {
+    background: #d8d8d8;
 }
 .sign_out{
     padding: 15px;
@@ -34,4 +42,19 @@
     padding-left: 40px;
     padding-right: 40px;
     right: 0px;
+}
+.actions {
+    width: 100px;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 0.1rem;
+    right: 20px;
+    background: white;
+}
+.action {
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+.action:hover {
+    background-color: #d8d8d8;
 }
