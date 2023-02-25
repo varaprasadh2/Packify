@@ -124,6 +124,8 @@ export default function ContainerSummary({}){
 
     return (
         <div>
+        <div style={{marginBottom:'20px'}}>Container 1 of 2</div>
+        <div style={{height: '500px',background:'#004baf'}}>
             <Canvas>
                 <OrbitControls />
                 <ambientLight intensity={0.5} />
@@ -138,6 +140,29 @@ export default function ContainerSummary({}){
                 <axesHelper />
                 <Grid infiniteGrid />
             </Canvas>
+        </div>
+            <div style={{display:'flex',flexDirection:'row',marginTop:'25px'}}>
+                <div className='stat'>
+                    <div className='statLable'>Dimensions</div>
+                    <div className='statValue'>{'10x10x30 [cm]'}</div>
+                </div>
+                <div className='stat'>
+                    <div className='statLable'>Container Volume</div>
+                    <div className='statValue'>1240 cc</div>
+                </div>
+                <div className='stat'>
+                    <div className='statLable'>Used Volume</div>
+                    <div className='statValue'>1240 cc</div>
+                </div>
+                <div className='stat'>
+                    <div className='statLable'>Weight</div>
+                    <div className='statValue'>50 kg</div>
+                </div>
+                <div className='stat'>
+                    <div className='statLable'>Netweight</div>
+                    <div className='statValue'>52 kg</div>
+                </div>
+            </div>
         </div>
     )
 }
