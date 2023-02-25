@@ -3,11 +3,22 @@
     width: 200px;
     height: 40px;
 }
+.container_name1{
+    min-width: 200px;
+    width: 200px;
+    height: 60px;
+}
 .container_fields{
     min-width: 100px;
     width: 100px;
     margin-left: 10px;
     height: 40px;
+}
+.container_fields1{
+    min-width: 100px;
+    width: 100px;
+    margin-left: 10px;
+    height: 60px;
 }
 .fields{
     display: flex;

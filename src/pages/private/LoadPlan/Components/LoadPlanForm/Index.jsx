@@ -154,8 +154,9 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
         <div style={{paddingLeft:'50px',paddingTop:'50px',width:'fit-content'}}>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
             {
-                containers.map(container =>(
+                containers.map((container,i) =>(
                     <Container
+                        showHeader={i==0}
                         {...container} onDelete={() => onContainerDelete(container.id)}
                         handleChange={handleContainerValueChange}
                         key={container.id}
@@ -165,8 +166,9 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addContainerStub}>+Add container</div>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px',marginTop:'1rem'}}>Items</div>
             {
-                items.map(item => ( 
+                items.map((item,i) => ( 
                     <Item {...item} onDelete={() => onItemDelete(item.id)}
+                        showHeader={i==0}
                         key={item.id}
                         handleChange={handleItemValueChange}
                     />
