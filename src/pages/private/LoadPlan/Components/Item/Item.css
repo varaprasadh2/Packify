@@ -1,12 +1,12 @@
 .item_name{
-    max-width: 200px;
-    width: 20%;
+    min-width: 200px !important;
+    width: 200px !important;
     height: 40px;
 
 }
 .item_fields{
-    max-width: 100px;
-    width: 12%;
+    min-width: 100px !important;
+    width: 100px !important;
     height: 40px;
     margin-left: 10px;
 }

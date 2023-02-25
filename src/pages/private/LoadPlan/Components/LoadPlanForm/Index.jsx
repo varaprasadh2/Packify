@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from '../Container/Container';
 import Item from '../Item/Item';
+import Saveloadplan from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
 
 const getContainerStub = () => {
@@ -152,7 +153,7 @@ export default function LoadPlanForm(props) {
 
     }
     return (
-        <div style={{paddingLeft:'50px',paddingTop:'50px'}}>
+        <div style={{paddingLeft:'50px',paddingTop:'50px',width:'fit-content'}}>
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
             {
                 containers.map(container =>(
@@ -175,7 +176,9 @@ export default function LoadPlanForm(props) {
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline'}} onClick={addItemStub}>+Add Item</div>
             <div style={{display:'flex',justifyContent:'flex-end'}}><Button style={{right:'50%'}} type="primary" onClick={process}>Process</Button></div>            
+            <div><Saveloadplan /></div>
         </div>
+        
     );
 
 }
