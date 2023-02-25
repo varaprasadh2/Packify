@@ -70,6 +70,15 @@ export const packBins = ({ items,containers }) => {
             return res;
        }).filter(i => i.count > 1);
 
+       const containerInfos = packer.bins.map((bin, index) => {
+            const container = containers.find(c => c.id == bin.name);
+            return {
+                ...container,
+                bin,
+                totalContainers: packer.bins.length,
+                currentContainerIndex: index,
+            }
+       });
         const result = {
             overallSummery: {
                 itemsPacked: itemsPacked,
@@ -81,7 +90,7 @@ export const packBins = ({ items,containers }) => {
             },
             itemsPacked: Object.values(packedItems),
             itemsNotPacked: itemsNotPackedList,
-            containers: [],
+            containers: containerInfos,
             packer,
         };
     return result;
