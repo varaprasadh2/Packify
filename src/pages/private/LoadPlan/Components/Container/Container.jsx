@@ -16,7 +16,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
         <div className='container'>
             <div className='fields'>
                 <div className='container_name'>
-                    <div>Name</div>
+                    {/* <div>Name</div> */}
                     <Input
                         placeholder="container one"
                         value={name}
@@ -24,7 +24,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Width</div>
+                    {/* <div>Width</div> */}
                     <Input
                         onChange={e => onChange('width', e.target.value)}
                         placeholder="width"
@@ -32,7 +32,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Height</div>
+                    {/* <div>Height</div> */}
                     <Input
                         value={height}
                         placeholder="height"
@@ -40,7 +40,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Depth</div>
+                    {/* <div>Depth</div> */}
                     <Input
                         value={depth}
                         placeholder="depth"
@@ -48,7 +48,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Weight</div>
+                    {/* <div>Weight</div> */}
                     <Input
                         value={weight}
                         placeholder="weight"
@@ -56,7 +56,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Max Weight</div>
+                    {/* <div>Max Weight</div> */}
                     <Input
                         value={maxWeight}
                         placeholder="max weight"
@@ -64,7 +64,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                     />
                 </div>
                 <div className='container_fields'>
-                    <div>Quantity</div>
+                    {/* <div>Quantity</div> */}
                     <Input
                         value={quantity}
                         placeholder="quantity"
