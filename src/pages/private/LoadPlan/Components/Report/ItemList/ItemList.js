@@ -34,7 +34,7 @@ export default function ItemList({report=[]}){
 const color= report.color;
 
     return (
-        <div className="packListTable" style={{width:'400px'}}>
+        <div className="packListTable" style={{width:'440px'}}>
             <Table columns={columns} dataSource={report} pagination={{ hideOnSinglePage: true }}/>
         </div>
     )

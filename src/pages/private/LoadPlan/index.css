@@ -1,7 +1,8 @@
 .load_content {
     height: calc(100vh - 151px);
     padding: 40px;
-
+    max-width: 960px;
+    margin: auto;
 }
 
 .load_content_top {
