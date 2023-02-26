@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 import NavBar from "./navbar/Navbar";
-import { auth } from "../../../firebase";
+import { auth, getSaveLoadPlans } from "../../../firebase";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useAuthState } from "react-firebase-hooks/auth";
 import './Index.css';
@@ -21,6 +21,10 @@ export default function DashBoard() {
         greeting = "Good evening";
     }
 
+    useEffect(()=> {
+        getSaveLoadPlans().then(results => setHistory(results))
+        return;
+    }, [])
     console.log({ debug: auth });
     const navigate = useNavigate();
     const Navigator = () => {
@@ -43,17 +47,21 @@ export default function DashBoard() {
                 <div className="action-area history">
                     <div className="action-area-title">Your saved load plans</div>
                     <div className="history-list">
-                        <div className="history-list-item">
-                            <div className="history-item-title">january shipment</div>
-                            <div className="history-item-actions">
-                                <div className="history-item-action">
-                                   <i className="fa fa-trash"></i>
+                        {
+                            history.map(item => (
+                                <div className="history-list-item">
+                                    <div className="history-item-title">{item.name}</div>
+                                    <div className="history-item-actions">
+                                        <div className="history-item-action">
+                                            <i className="fa fa-trash"></i>
+                                        </div>
+                                        <div className="history-item-action">
+                                            View &nbsp;<i className="fa fa-long-arrow-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="history-item-action">
-                                    View &nbsp;<i className="fa fa-long-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

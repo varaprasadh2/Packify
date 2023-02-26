@@ -66,7 +66,7 @@ export const saveReportToHistory = async ({ name, report }) => {
         const docResult = await addDoc(collection(db, "loadPlans"), {
             userId: userId,
             name: name,
-            report: report
+            report: JSON.parse(JSON.stringify(report)),
         });
         console.log(docResult);
         return docResult;
@@ -75,6 +75,13 @@ export const saveReportToHistory = async ({ name, report }) => {
         // show toaster
         return null;
     }
+}
+
+export const getSaveLoadPlans = async () => {
+    const userId = auth.currentUser.uid;
+    const q = query(collection(db, "loadPlans"), where("userId", "==", userId));
+    const querySnapshot = await getDocs(q);
+    return querySnapshot.docs.map(doc => doc.data());
 }
 
 export default app;

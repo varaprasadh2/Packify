@@ -1,12 +1,19 @@
 import ContainerSummary from "./ContainerSummary/ContainerSummary";
 import ItemList from "./ItemList/ItemList";
 import Summary from "./Summary/Summary";
-import Saveloadplan from '../SaveLoadPlanPopup/Index';
+import SaveLoadPlanPopup from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
+import { saveReportToHistory } from "../../../../../firebase";
 
 export default function ({report = {}}){
     console.log('report', report);
 
+    const handleSave =(name) => {
+        const result =saveReportToHistory({ name, report });
+        console.log({
+            result
+        });
+    }
     return (
         <div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:'930px'}}>
@@ -15,7 +22,7 @@ export default function ({report = {}}){
                 </div>
                 <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
                     <div style={{marginRight:'20px'}}><Button type="primary">Export as PDF</Button></div>
-                    <div><Saveloadplan /></div>
+                    <div><SaveLoadPlanPopup handleSave={handleSave} /></div>
                 </div>
             </div>
             <div>

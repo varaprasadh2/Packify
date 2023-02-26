@@ -4,9 +4,15 @@ import { Input } from 'antd';
 import '../SaveLoadPlanPopup/index.css'
 // import '../../../../../../src/index.css'
 
-const Saveloadplan = () => {
+const SaveLoadPlanPopup = ( { handleSave = () => {} }) => {
   
   const [modal2Open, setModal2Open] = useState(false);
+  const [name, setName] = useState('');
+
+  const onSave = () => {
+    if (name.trim() == '') return;
+    handleSave(name);
+  }
   return (
     <>
       <Button type="primary" onClick={() => setModal2Open(true)}>
@@ -16,15 +22,14 @@ const Saveloadplan = () => {
         title="Save load plan"
         centered
         open={modal2Open}
-        onOk={() => setModal2Open(false)}
+        okText={'Save'}
+        onOk={onSave}
         onCancel={() => setModal2Open(false)}
       >
-         {/* <h1 className='font loadplan'>Save load plan</h1> */}
          <p className='font'>Please give a name to this load plan</p>
-         <Input placeholder="i.e. order number or referene id" />
-
+         <Input placeholder="i.e. order number or reference id" onChange={e => setName(e.target.value)}/>
       </Modal>
     </>
   );
 };
-export default Saveloadplan;
+export default SaveLoadPlanPopup;
