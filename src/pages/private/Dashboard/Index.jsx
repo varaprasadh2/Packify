@@ -23,7 +23,6 @@ export default function DashBoard() {
 
     useEffect(()=> {
         getSaveLoadPlans().then(results => setHistory(results))
-        getLoadPlanInfo('JrSe1ejGPVPvlOexTot6').then(res => console.log({res}));
         return;
     }, [])
     const navigate = useNavigate();
