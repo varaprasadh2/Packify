@@ -52,10 +52,10 @@ export default function DashBoard() {
     }
     const renderContent = () => {
         if (historyLoading) {
-            return <div>Loading...</div>
+            return <div className="history-loading">Loading...</div>
         }
         if (history.length === 0) {
-            return <div>No History</div>
+            return <div className="no-history">You haven't saved anything yet!</div>
         }
         return (
             <div className="history-list">

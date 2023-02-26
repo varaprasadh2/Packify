@@ -64,3 +64,8 @@
     /* background-color: #004BAF; */
     /* color: white; */
 }
+
+.history-loading, .no-history {
+    margin-top: 5rem;
+    text-align: center;
+}
