@@ -22,6 +22,10 @@ export default function Summary({report={}}){
                     <div>{report.usedVolume} cm<sup>3</sup></div>
                 </div>
                 <div className="overall_list_item">
+                    <div>Volume Usage</div>
+                    <div>{report.volumeUsage} %</div>
+                </div>
+                <div className="overall_list_item">
                     <div>Weight</div>
                     <div>{report.weight} kg</div>
                 </div>

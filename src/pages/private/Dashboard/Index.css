@@ -43,6 +43,7 @@
     padding: 0.8rem;
     filter: drop-shadow(1px 1px 1px gray);
     border-radius: 0.2rem;
+    margin: 0.5rem 0rem;
 }
 .history-item-actions {
     margin-left: auto;
@@ -60,7 +61,7 @@
     align-items: center;
 }
 
-.history-item-action {
+/* .history-item-action { */
     /* background-color: #004BAF; */
     /* color: white; */
-}
+/* } */
