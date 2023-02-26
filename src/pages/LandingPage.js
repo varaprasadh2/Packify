@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Mylogo from '../assets/app_logo.png';
 import Google from '../assets/google.png';
 import delServiceIMG from '../assets/svg/delivery-service.svg';
@@ -6,14 +6,15 @@ import './LandingPage.css';
 import { auth, signInWithGoogle } from '../firebase';
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Loader from "../components/Loader/Index";
 
 const LandingPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
   const continueWithGoogle = async () => {
     const user = await signInWithGoogle();
     localStorage.setItem('user',JSON.stringify(user));
-    console.log({ user });
     if (user) {
       navigate("/dashboard");
     }
@@ -27,7 +28,12 @@ const LandingPage = () => {
     if (user) navigate("/dashboard");
   }, [user, loading]);
 
+  useEffect(() => {
+    setIsLoading(loading);
+  }, [loading]);
+
   return (
+     isLoading ? <Loader/> :
       <div className="landing_page">
         <div>
         <img className="logo" src={Mylogo} />

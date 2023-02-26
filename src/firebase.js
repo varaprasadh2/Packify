@@ -9,6 +9,7 @@ import {
     collection,
     where,
     addDoc,
+    documentId,
 } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -68,7 +69,6 @@ export const saveReportToHistory = async ({ name, report }) => {
             name: name,
             report: JSON.parse(JSON.stringify(report)),
         });
-        console.log(docResult);
         return docResult;
     } catch (error) {
         console.error(error);
@@ -81,7 +81,15 @@ export const getSaveLoadPlans = async () => {
     const userId = auth.currentUser.uid;
     const q = query(collection(db, "loadPlans"), where("userId", "==", userId));
     const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.map(doc => doc.data());
+    return querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+}
+
+export const getLoadPlanInfo = async (id) => {
+    const q = query(collection(db, "loadPlans"), where(documentId(), "==", id));
+    const querySnapshot = await getDocs(q);
+    const results = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}));
+    if (results.length == 0) return null;
+    return results[0];
 }
 
 export default app;

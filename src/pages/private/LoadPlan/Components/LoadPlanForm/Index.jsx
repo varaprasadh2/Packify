@@ -67,9 +67,6 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
     }
 
     const process = () => {
-        console.log({
-            items, containers
-        });
         items.forEach(item => {
             if (item.name.trim() === '') {
                 item.errors.name = 'should not be empty';
@@ -144,11 +141,8 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
         const isItemsHasErrors = items.some(item => Object.keys(item.errors).length > 0);
         const isContainerHasErrors = containers.some(item => Object.keys(item.errors).length > 0);
         // if items has any errors or container has any errors dont do anything;
-        console.log(isItemsHasErrors, isContainerHasErrors);
         if (isItemsHasErrors) return;
         if (isContainerHasErrors) return;
-
-        console.log("lets gooooo", { items, containers });
         generateReport({ items, containers });
     }
     return (

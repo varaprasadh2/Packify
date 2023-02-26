@@ -8,7 +8,6 @@ const AuthComponent = () =>{
     const [showLoader, setShowLoader] = useState(true);
     const [user, loading, error] = useAuthState(auth);
     useEffect(() => {
-        console.log("debug", {loading});
         if (loading) return;
         const timer = setTimeout(() => setShowLoader(false), 3000);
         return () => clearTimeout(timer);

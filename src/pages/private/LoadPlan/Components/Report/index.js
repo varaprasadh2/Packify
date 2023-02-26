@@ -6,13 +6,9 @@ import { Button } from 'antd';
 import { saveReportToHistory } from "../../../../../firebase";
 
 export default function ({report = {}}){
-    console.log('report', report);
-
     const handleSave =(name) => {
         const result =saveReportToHistory({ name, report });
-        console.log({
-            result
-        });
+        // TODO: show alert and close the popup
     }
     return (
         <div>

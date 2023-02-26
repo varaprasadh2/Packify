@@ -15,7 +15,6 @@ export default function LoadPlan() {
     }
 
     const generateReport = ({ items, containers }) => {
-        console.log('generate report', { items, containers });
         const result = packBins({ items, containers });
         setReport(result);
     }
