@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function DashBoard() {
     const [history, setHistory] = useState([]);
+    const [historyLoading, setHistoryLoading] = useState(true);
     let currentHour = new Date().getHours();
     // Define the greeting based on the current time
     let greeting = 'Hi';
@@ -22,7 +23,10 @@ export default function DashBoard() {
     }
 
     useEffect(()=> {
-        getSaveLoadPlans().then(results => setHistory(results))
+        getSaveLoadPlans().then(results => {
+            setHistory(results);
+            setHistoryLoading(false);
+        })
         getLoadPlanInfo('JrSe1ejGPVPvlOexTot6').then(res => console.log({res}));
         return;
     }, [])
@@ -31,6 +35,37 @@ export default function DashBoard() {
         navigate('/loadPlan');
     }
     const [user, loading, error] = useAuthState(auth);
+
+    const renderHistoryItem = item => {
+        return (
+            <div className="history-list-item" key={item.id}>
+                <div className="history-item-title">{item.name}</div>
+                <div className="history-item-actions">
+                    {/* <div className="history-item-action">
+                                            <i className="fa fa-trash"></i>
+                                        </div> */}
+                    <div className="history-item-action" onClick={() => navigate(`/loadplans/${item.id}`)}>
+                        View &nbsp;<i className="fa fa-long-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    const renderContent = () => {
+        if (historyLoading) {
+            return <div>Loading...</div>
+        }
+        if (history.length === 0) {
+            return <div>No History</div>
+        }
+        return (
+            <div className="history-list">
+                {
+                    history.map(renderHistoryItem)
+                }
+            </div>  
+        )
+    }
     return (
         <div>
             <NavBar/>
@@ -46,23 +81,7 @@ export default function DashBoard() {
                 </div>
                 <div className="action-area history">
                     <div className="action-area-title">Your saved load plans</div>
-                    <div className="history-list">
-                        {
-                            history.map(item => (
-                                <div className="history-list-item" key={item.id}>
-                                    <div className="history-item-title">{item.name}</div>
-                                    <div className="history-item-actions">
-                                        {/* <div className="history-item-action">
-                                            <i className="fa fa-trash"></i>
-                                        </div> */}
-                                        <div className="history-item-action" onClick={() => navigate(`/loadplans/${item.id}`)}>
-                                            View &nbsp;<i className="fa fa-long-arrow-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
+                    {renderContent()}
                 </div>
             </div>
         </div>
