@@ -69,7 +69,7 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         onChange={e => onChange('maxWeight', e.target.value)}
                     />
                 </div>
-                <div className={showHeader?'container_fields1':'container_fields'}>
+                {/* <div className={showHeader?'container_fields1':'container_fields'}>
                     { showHeader && <div >Quantity</div> }
                     <Input
                         value={quantity}
@@ -77,11 +77,11 @@ export default function Container({id, name, width, height, depth, weight, maxWe
                         status={errors.quantity?'error':'null'}
                         onChange={e => onChange('quantity', e.target.value)}
                     />
-                </div>
-                <div className='close'>
+                </div> */}
+                {/* <div className='close'>
                 { showHeader && <br/> }
                     <div className="close_icon" onClick={onDelete}>x</div>
-                </div>
+                </div> */}
             </div>            
         </div>
     );

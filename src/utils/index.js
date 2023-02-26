@@ -35,6 +35,7 @@ export const packBins = ({ items,containers }) => {
 
     packer.pack();
 
+    console.log('DEBUG: items packed', packer);
     const itemsPacked = packer.bins.reduce((count, bin) => count + bin.items.length, 0);
     const itemsNotPacked = packerContext.items.length - itemsPacked;
     const totalVolume = packerContext.bins.reduce((sum, bin) => sum + (bin.width * bin.height * bin.depth), 0);
@@ -94,7 +95,7 @@ export const packBins = ({ items,containers }) => {
                 usedVolume: usedVolume,
                 weight: containerWeight + weight,
                 netWeight: weight,
-                volumeUsage: (usedVolume/totalVolume) * 100,
+                volumeUsage: ((usedVolume/totalVolume) * 100).toFixed(2),
             },
             itemsPacked: Object.values(packedItems),
             itemsNotPacked: itemsNotPackedList,

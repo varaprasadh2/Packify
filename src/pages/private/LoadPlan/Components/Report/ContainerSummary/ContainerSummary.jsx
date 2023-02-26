@@ -29,7 +29,6 @@ function Box(props) {
 
 const renderItem = (item) => {
     const [x, y, z] = item.position;
-    console.log({ item });
     return (
         <Box
             position={[x + item.width / 2, y + item.height / 2, z + item.depth / 2]}

@@ -15,9 +15,7 @@ export default function LoadPlans({}) {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=> {
-        console.log(id)
         getLoadPlanInfo(id).then(d => {
-            console.log({ d });
             setData(d);
             setLoading(false);
         }).catch(console.error)

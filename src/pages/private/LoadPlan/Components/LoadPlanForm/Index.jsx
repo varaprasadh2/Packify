@@ -156,7 +156,7 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
     }
     return (
         <div style={{paddingLeft:'50px',paddingTop:'50px',width:'fit-content'}}>
-            <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Containers</div>
+            <div className="label" style={{fontSize:'35px',paddingBottom:'20px'}}>Container</div>
             {
                 containers.map((container,i) =>(
                     <Container
@@ -167,7 +167,7 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
                     />
                 ))
             }
-            <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addContainerStub}>+Add container</div>
+            {/* <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addContainerStub}>+Add container</div> */}
             <div className="label" style={{fontSize:'35px',paddingBottom:'20px',marginTop:'1rem'}}>Items</div>
             {
                 items.map((item,i) => ( 
@@ -179,7 +179,7 @@ export default function LoadPlanForm({ generateReport = () => {} }) {
                 ))
             }
             <div style={{cursor:'pointer',color:'blue',textDecorationLine:'underline',width:'fit-content'}} onClick={addItemStub}>+Add Item</div>
-            <div style={{display:'flex',justifyContent:'flex-end'}}><Button style={{right:'110px'}} type="primary" onClick={process}>Process</Button></div>            
+            <div style={{display:'flex',justifyContent:'flex-end'}}><Button type="primary" onClick={process}>Process</Button></div>            
         </div>
         
     );
