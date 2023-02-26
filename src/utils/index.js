@@ -27,6 +27,7 @@ export const packBins = ({ items,containers }) => {
     items.forEach(item => {
         for(let i=0; i<item.quantity; i++) {
             const packerItem = new Item(item.id, parseInt(item.width), parseInt(item.height), parseInt(item.depth), parseInt(item.weight));
+            packerItem.data = item;
             packerContext.items.push(packerItem);
             packer.addItem(packerItem);
         }

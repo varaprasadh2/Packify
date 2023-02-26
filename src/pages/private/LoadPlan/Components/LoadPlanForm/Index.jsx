@@ -3,6 +3,14 @@ import Container from '../Container/Container';
 import Item from '../Item/Item';
 import { Button } from 'antd';
 
+const colors = ['#F46036', '#2E294E', '#1B998B', '#E71D36', '#C5D86D', '#5FAD41', '#3A0842', '#1F0322'];
+
+let itemColorSequence = 0;
+const getIemColor = () => {
+    const color = colors[itemColorSequence];
+    itemColorSequence = (itemColorSequence+1)%colors.length;
+    return color;
+}
 
 const getContainerStub = () => {
     return ({
@@ -27,7 +35,8 @@ const getItemStub = () => {
         depth: null,
         weight: null,
         quantity: 1,
-        errors: {}
+        errors: {},
+        color: getIemColor(),
     })
 }
 export default function LoadPlanForm({ generateReport = () => {} }) {

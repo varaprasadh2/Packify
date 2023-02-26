@@ -3,7 +3,7 @@ import "./Summary.css";
 export default function Summary({report={}}){
     return (
         <div className="summary">
-            <div style={{marginBottom:'20px'}}>Overall Summary</div>
+            <div style={{marginBottom:'20px', fontWeight: 'bold'}}>Overall Summary</div>
             <div className="overall_list">
                 <div className="overall_list_item">
                     <div>Items Packed</div>
