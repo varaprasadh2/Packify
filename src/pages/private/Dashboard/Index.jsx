@@ -27,7 +27,6 @@ export default function DashBoard() {
             setHistory(results);
             setHistoryLoading(false);
         })
-        getLoadPlanInfo('JrSe1ejGPVPvlOexTot6').then(res => console.log({res}));
         return;
     }, [])
     const navigate = useNavigate();

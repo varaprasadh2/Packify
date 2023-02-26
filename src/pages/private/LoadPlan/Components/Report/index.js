@@ -5,21 +5,21 @@ import SaveLoadPlanPopup from '../SaveLoadPlanPopup/Index';
 import { Button } from 'antd';
 import { saveReportToHistory } from "../../../../../firebase";
 
-export default function ({report = {}}){
+export default function ({reportName = null, report = {},hideActions=false}){
     const handleSave =(name) => {
         const result =saveReportToHistory({ name, report });
         // TODO: show alert and close the popup
     }
     return (
-        <div>
+        <div >
             <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:'930px'}}>
-                <div style={{fontSize:'22px'}}>
-                    Report
+                <div style={{fontSize:'22px',textTransform:'capitalize'}}>
+                    {reportName ? `${reportName} Report` : 'Report'}
                 </div>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
-                    <div style={{marginRight:'20px'}}><Button type="primary">Export as PDF</Button></div>
+                {!hideActions && <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
+                    {/* <div style={{marginRight:'20px'}}><Button type="primary">Export as PDF</Button></div> */}
                     <div><SaveLoadPlanPopup handleSave={handleSave} /></div>
-                </div>
+                </div> }
             </div>
             <div>
                 <div style={{marginTop:'50px'}}><Summary report={report.overallSummery}/></div>
