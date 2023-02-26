@@ -94,6 +94,7 @@ export const packBins = ({ items,containers }) => {
                 usedVolume: usedVolume,
                 weight: containerWeight + weight,
                 netWeight: weight,
+                volumeUsage: (usedVolume/totalVolume) * 100,
             },
             itemsPacked: Object.values(packedItems),
             itemsNotPacked: itemsNotPackedList,
