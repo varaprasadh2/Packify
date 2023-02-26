@@ -63,7 +63,7 @@ export const packBins = ({ items,containers }) => {
             return group
         }, {});
        const itemsNotPackedList = items.map(item => {
-            const usedCount = packedItems[item.id].count | 0;
+            const usedCount = packedItems[item.id] ? packedItems[item.id].count : 0;
             const res = {
                 ...item,
                 count: item.quantity - usedCount
