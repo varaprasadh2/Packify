@@ -22,15 +22,20 @@ function Box(props) {
             onPointerOut={(event) => setHover(false)}
         >
             <boxGeometry args={props.size} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'}/>
+            <meshStandardMaterial color={hovered ? 'white' : props.color}/>
         </mesh>
     )
 }
 
 const renderItem = (item) => {
     const [x, y, z] = item.position;
+    console.log({ item });
     return (
-        <Box position={[x + item.width / 2, y + item.height / 2, z + item.depth / 2]} size={[item.width, item.height, item.depth]} />
+        <Box
+            position={[x + item.width / 2, y + item.height / 2, z + item.depth / 2]}
+            size={[item.width, item.height, item.depth]}
+            color={item.data.color}
+        />
     );
 }
 
@@ -42,6 +47,7 @@ export default function ContainerSummary({ data }){
             <div style={{ marginBottom: '20px' }}>Container {currentContainerIndex} of {totalContainers}</div>
             <div style={{height: '500px',background:'#004baf'}}>
                 <Canvas>
+                    <PerspectiveCamera makeDefault position={[50, 50,50]}/>
                     <OrbitControls />
                     <ambientLight intensity={0.5} />
                     <mesh position={[bin.width / 2, bin.height / 2, bin.depth / 2]}>

@@ -51,9 +51,9 @@ export default function DashBoard() {
                                 <div className="history-list-item" key={item.id}>
                                     <div className="history-item-title">{item.name}</div>
                                     <div className="history-item-actions">
-                                        <div className="history-item-action">
+                                        {/* <div className="history-item-action">
                                             <i className="fa fa-trash"></i>
-                                        </div>
+                                        </div> */}
                                         <div className="history-item-action" onClick={() => navigate(`/loadplans/${item.id}`)}>
                                             View &nbsp;<i className="fa fa-long-arrow-right"></i>
                                         </div>

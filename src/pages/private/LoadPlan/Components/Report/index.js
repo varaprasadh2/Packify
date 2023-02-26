@@ -25,18 +25,18 @@ export default function ({report = {}}){
                 <div style={{marginTop:'50px'}}><Summary report={report.overallSummery}/></div>
                 <div style={{marginTop:'50px',display:'flex',flexDirection:'row'}}>
                     <div style={{marginRight:'20px'}}>
-                        <div>Packed Items</div>
+                        <div style={{marginBottom:'0.5rem', fontWeight: 'bold'}}>Packed Items</div>
                         <ItemList report={report.itemsPacked}/>
                     </div>
                     <div>
-                        <div>Items not packed</div>
+                        <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>Items not packed</div>
                         <ItemList report={report.itemsNotPacked}/>
                     </div>
                 </div>
                 <div style={{marginTop:'50px'}}>
                     {
                         report.containers.map(container => (
-                            <ContainerSummary key={container.id} data={container}/>
+                            <ContainerSummary key={container.id} data={container} report={report}/>
                         ))
                     }
                 </div>
