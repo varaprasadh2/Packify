@@ -43,7 +43,7 @@ export default function ContainerSummary({ data }){
 
     return (
         <div style={{marginTop: '1rem'}}>
-            <div style={{ marginBottom: '20px' }}>Container {currentContainerIndex} of {totalContainers}</div>
+            {/* <div style={{ marginBottom: '20px' }}>Container {currentContainerIndex} of {totalContainers}</div> */}
             <div style={{height: '500px',background:'#004baf'}}>
                 <Canvas>
                     <PerspectiveCamera makeDefault position={[50, 50,50]}/>
